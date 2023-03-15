@@ -19,22 +19,30 @@
       #issMap {
         height: 500px;
       }
+ #a{
+    border:solid 5px;
+    margin:auto;
+    width:auto;
+    text-align: center;
+ }
+      
     </style>
 
     <title>Fetch JSON from API and map lat lon</title>
   </head>
   <body>
     <h1>Where is the ISS?</h1>
-
+<div id="a">
+    
     <p>
-      latitude: <span id="lat"></span>°<br />
-      longitude: <span id="lon"></span>° <br />
-      velocity: <span id="vel"></span>mph <br />
+      szerokość: <span id="lat"></span>°<br />
+      długość: <span id="lon"></span>° <br />
+      prędkość: <span id="vel"></span>mph <br />
       strefa czasowa: <span id="strefa"></span> <br />
        aktualny kraj : <span id="kraj"></span> <br />
       wysokość: <span id="wys"></span>kilometrow <br />
     </p>
-
+</div>
     <div id="issMap"></div>
 
     <script>
