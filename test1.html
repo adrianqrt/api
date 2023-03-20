@@ -9,6 +9,10 @@
       href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
       integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
       crossorigin=""
+      
+    />
+    <link
+    rel="stylesheet" href="style.css"
     />
     <script
       src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
@@ -16,30 +20,20 @@
       crossorigin=""
     ></script>
     <style>
-      #issMap {
-        height: 500px;
-      }
- #a{
-    border:solid 5px;
-    margin:auto;
-    width:auto;
-    text-align: center;
- }
+
       
     </style>
 
-    <title>Fetch JSON from API and map lat lon</title>
+    <title>API</title>
   </head>
   <body>
-    <h1>Where is the ISS?</h1>
+    <h1>Aktualne Położenie ISS</h1>
 <div id="a">
     
     <p>
       szerokość: <span id="lat"></span>°<br />
       długość: <span id="lon"></span>° <br />
       prędkość: <span id="vel"></span>mph <br />
-      strefa czasowa: <span id="strefa"></span> <br />
-       aktualny kraj : <span id="kraj"></span> <br />
       wysokość: <span id="wys"></span>kilometrow <br />
     </p>
 </div>
@@ -65,7 +59,8 @@
       let marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
 
       const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
-
+      
+      
       let firstTime = true;
 
       async function getISS() {
@@ -80,13 +75,18 @@
         document.getElementById('lat').textContent = latitude.toFixed(2);
         document.getElementById('lon').textContent = longitude.toFixed(2);
         document.getElementById('vel').textContent = velocity.toFixed(2);
-        document.getElementById('strefa').textContent = timezone_id;
-        document.getElementById('kraj').textContent = country_code;
+        
         document.getElementById('wys').textContent = altitude.toFixed(2);
+     
       }
+  
+
 
       getISS();
+      
       setInterval(getISS, 1000);
+     
+      
     </script>
   </body>
 </html>

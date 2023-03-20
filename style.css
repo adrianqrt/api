@@ -1,0 +1,18 @@
+html{
+  background-image: linear-gradient(rgb(50, 120, 161), rgb(16, 80, 105))
+}
+#issMap {
+  height: 500px;
+}
+#a{
+  border: ridge rgb(128, 146, 226) 5px;
+  text-align: center;
+  width: 25%;
+  height: 25%;
+  margin: auto;
+  margin-bottom: 10px;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 25px;
+ 
+}
