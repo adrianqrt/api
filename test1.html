@@ -30,7 +30,7 @@
     <p>
       szerokość: <span id="lat"></span>°<br />
       długość: <span id="lon"></span>° <br />
-      prędkość: <span id="vel"></span>mph <br />
+      prędkość: <span id="vel"></span>km/h <br />
       wysokość: <span id="wys"></span>kilometrow <br />
     </p>
 </div>
@@ -64,14 +64,14 @@
         const response = await fetch(api_url);
         const data = await response.json();
         const { latitude, longitude, velocity, timezone_id, country_code, altitude } = data;
-
+        const velocitykmh = velocity * 1.60934;
         // Always set the view to current lat lon and zoom!
         mymap.setView([latitude, longitude], mymap.getZoom());
         marker.setLatLng([latitude, longitude]);
 
         document.getElementById('lat').textContent = latitude.toFixed(2);
         document.getElementById('lon').textContent = longitude.toFixed(2);
-        document.getElementById('vel').textContent = velocity.toFixed(2);
+        document.getElementById('vel').textContent = velocitykmh.toFixed(2);
         
         document.getElementById('wys').textContent = altitude.toFixed(2);
      
